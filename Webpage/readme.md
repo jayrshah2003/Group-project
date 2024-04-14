@@ -12,19 +12,14 @@ website: Contains the Flask-built web interface's code.
 Readme.md: Offers usage instructions and a project description.
 requirements.txt: Provides a list of all the packages needed to complete the project.
 
+https://github.com/jayrshah2003/Group-project.git
 
-STEPS TO USE 
-
-clone this repository:- git clone https://github.com/markcassar/COMP2006_project_Group_8.git
-Install packages :- pip install -r requirements.txt
-Open and run :- cd website
-                python webpage.py
-
+Were not able to have access to the Repo so have made our repository and submitted the link for it
 
 Pages on a Website
 Homepage: gives a summary of the team members and the project.
 Data Pages: Dedicated pages with example data from each dataset (weather, titanic, diabetes) are displayed.
-Users can enter their data on the prediction page to receive predictions from the machine learning models that have been trained.
+Users can enter their data on the prediction page to receive predictions from the machine learning models that have been trained.We tried to get the prediction working but unfortunately don't know what was getting wrong in it.
 
 Data Entry and Model Development
 Every dataset's data is gathered, examined, and kept in a SQLite database.
@@ -36,6 +31,4 @@ Python: Used for model training, data processing, and website development throug
 The web framework of choice for creating the interactive web interface is Flask.
 SQLite: Used in relational databases to store processed data.
 
-
 MEMBERS :- Jay Shah, Daksh Vyas, Meet Patel
-
