@@ -70,34 +70,24 @@
         {% endfor %}
       </tbody>
     </table>
+    <br />
+    <a href="{{ url_for('titanic') }}">Go to titanic data page</a>
+    <br />
+    <a href="{{ url_for('diabetes') }}">Go to diabetes data page</a>
+    <br />
+
     <!DOCTYPE html>
     <html lang="en">
       <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-          rel="stylesheet"
-          href="{{ url_for('static', filename='css/style.css') }}"
-        />
-        <title>Placement Prediction</title>
       </head>
       <body>
-        <div class="intro">
+        <div>
           <h1>Welcome to Weather Prediction</h1>
         </div>
         <form action="{{ url_for('clf_pred')}}" name="form" method="GET">
-          <!-- <p>
-        Select Stream
-      </p required>
-      <select name="stream" id="stream" placeholder="Select" required>
-        <option value="" disabled selected>Please select</option>
-        <option value="0">Civil</option>
-        <option value="1">CSE</option>
-        <option value="2">Electronics</option>
-        <option value="3">EnTC</option>
-        <option value="5">Mechanical</option>
-      </select> -->
           <br />
 
           <p>TempAvgF</p>
@@ -127,13 +117,6 @@
           <input type="number" name="HumidityAvgPercent" id="HumidityAvgPercent"
           min="0" pattern="^[0-9]\d*$" required//>
           <br />
-          <!-- <p>Select Gender</p>
-      <select name="gender" id="gender" placeholder="Select" required>
-        <option value="" disabled selected>Please select</option>
-        <option value="0">Female</option>
-        <option value="1">Male</option>
-      </select>
-      <br /> -->
 
           <button type="submit" value="submit" onclick="submitForm()">
             Submit

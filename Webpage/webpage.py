@@ -27,20 +27,6 @@ def weather():
     con.close()
 
     return render_template("weather_table.html",weather=weather)
-def predict():
-    TempAvgF = request.args.get('TempAvgF')
-    DewPointAvgF = request.args.get('DewPointAvgF')
-    HumidityAvgPercent = request.args.get('HumidityAvgPercent')
-    
-    arr = np.array([TempAvgF,DewPointAvgF,HumidityAvgPercent])
-    brr = np.asarray(arr, dtype=float)
-    output = model.predict([brr])
-    if(output==1):
-        out = 'You have high chances of getting placed!!!'
-    else:
-        out = 'You have low chances of getting placed. All the best.'
-    return render_template( output=out)
-
 
 @app.route("/titanic")
 def titanic():
@@ -65,8 +51,20 @@ load_saved_model = r"C:\Users\jay\Downloads\Group project\Webpage\savedmodels\kn
 with open(load_saved_model, 'rb') as f:
     knn_model = pickle.load(f)
 
-
+@app.route("/predict")
+def clf_pred():
+    TempAvgF = request.args.get('TempAvgF')
+    DewPointAvgF = request.args.get('DewPointAvgF')
+    HumidityAvgPercent = request.args.get('HumidityAvgPercent')
     
+    arr = np.array([TempAvgF,DewPointAvgF,HumidityAvgPercent])
+    brr = np.asarray(arr, dtype=float)
+    output = model.predict([brr])
+    if(output==1):
+        out = 'You have high chances of getting placed!!!'
+    else:
+        out = 'You have low chances of getting placed. All the best.'
+    return render_template('out.html', output=out)
     
 
 
