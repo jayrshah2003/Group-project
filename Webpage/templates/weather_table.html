@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Table</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Weather Table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>TempHighF</th>
+          <th>TempAvgF</th>
+          <th>TempLowF</th>
+          <th>DewPointHighF</th>
+          <th>DewPointAvgF</th>
+          <th>DewPointLowF</th>
+          <th>HumidityHighPercent</th>
+          <th>HumidityAvgPercent</th>
+          <th>HumidityLowPercent</th>
+          <th>SeaLevelPressureAvgInches</th>
+          <th>SeaLevelPressureLowInches</th>
+          <th>VisibilityHighMiles</th>
+          <th>VisibilityAvgMiles</th>
+          <th>VisibilityLowMiles</th>
+          <th>WindHighMPH</th>
+          <th>WindAvgMPH</th>
+          <th>WindGustMPH</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in weather %}
+        <tr>
+          <td>{{ row[0] }}</td>
+          <td>{{ row[1] }}</td>
+          <td>{{ row[2] }}</td>
+          <td>{{ row[3] }}</td>
+          <td>{{ row[4] }}</td>
+          <td>{{ row[5] }}</td>
+          <td>{{ row[6] }}</td>
+          <td>{{ row[7] }}</td>
+          <td>{{ row[8] }}</td>
+          <td>{{ row[9] }}</td>
+          <td>{{ row[10] }}</td>
+          <td>{{ row[11] }}</td>
+          <td>{{ row[12] }}</td>
+          <td>{{ row[13] }}</td>
+          <td>{{ row[14] }}</td>
+          <td>{{ row[15] }}</td>
+          <td>{{ row[16] }}</td>
+          <td>{{ row[17] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+          rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}"
+        />
+        <title>Placement Prediction</title>
+      </head>
+      <body>
+        <div class="intro">
+          <h1>Welcome to Weather Prediction</h1>
+        </div>
+        <form action="{{ url_for('clf_pred')}}" name="form" method="GET">
+          <!-- <p>
+        Select Stream
+      </p required>
+      <select name="stream" id="stream" placeholder="Select" required>
+        <option value="" disabled selected>Please select</option>
+        <option value="0">Civil</option>
+        <option value="1">CSE</option>
+        <option value="2">Electronics</option>
+        <option value="3">EnTC</option>
+        <option value="5">Mechanical</option>
+      </select> -->
+          <br />
+
+          <p>TempAvgF</p>
+          <input
+            type="number"
+            step="0.01"
+            name="TempAvgF"
+            id="TempAvgF"
+            min="0"
+            pattern="^[0-9]\d*$"
+            required
+          />
+          <br />
+
+          <p>DewPointAvgF</p>
+          <input
+            type="number"
+            name="DewPointAvgF"
+            id="DewPointAvgF"
+            min="0"
+            pattern="^[0-9]\d*$"
+            required
+          />
+          <br />
+
+          <p>HumidityAvgPercent</p>
+          <input type="number" name="HumidityAvgPercent" id="HumidityAvgPercent"
+          min="0" pattern="^[0-9]\d*$" required//>
+          <br />
+          <!-- <p>Select Gender</p>
+      <select name="gender" id="gender" placeholder="Select" required>
+        <option value="" disabled selected>Please select</option>
+        <option value="0">Female</option>
+        <option value="1">Male</option>
+      </select>
+      <br /> -->
+
+          <button type="submit" value="submit" onclick="submitForm()">
+            Submit
+          </button>
+
+          <script>
+            function submitForm() {
+              document.form.submit();
+              //document.form.reset();
+            }
+          </script>
+        </form>
+        <div class="end">
+          <h2>This Website uses Random Forest Model to predict results</h2>
+        </div>
+      </body>
+    </html>
+  </body>
+</html>

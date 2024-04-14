@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2><b>Welcome To The Home Page</b></h2>
+    <h3>This Project is made by Jay Shah  &nbsp; &nbsp; &nbsp;  Meet Patel  &nbsp; &nbsp; &nbsp; Daksh Vyas</h3>
+    <h4>In this Project , Firstly we did find 3 datasets then we saw weither the dataset consists of missing values ,errors, etc... then after we saw how many missing data are there then cleaned the missing values.</t>Now, all the cleaned data is stored in a new csv file and that csv file is trained and then its time for regression  as well classification.Now We tried to pull that cleaned data file to the webpage using flask and predicted the data and also created 2 diffrent pages named homepage and aboutpage</h4>
+    <p>Select the page you want to see : </p>
+    <ul>
+        <li><a href="{{ url_for('weather') }}">Go to weather data page</a></li>
+        <li><a href="{{ url_for('titanic') }}">Go to titanic data page</a></li>
+        <li><a href="{{ url_for('diabetes') }}">Go to diabetes data page</a></li>
+    </ul>
+
+</body>
+</html>
